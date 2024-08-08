@@ -24,4 +24,4 @@ Run `ng s -o`
 ### Interface
 `ng g i <Interface-name> --path="src/app/interfaces"`
 ### Service
-`ng g i <Service-name> --path="src/app/services"`
+`ng g i <Service-name> --path="src/app/services" --skip-tests`
