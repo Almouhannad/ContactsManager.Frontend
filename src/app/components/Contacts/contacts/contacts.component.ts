@@ -7,7 +7,7 @@ import { ContactsService } from '../../../services/contacts/contacts.service';
   templateUrl: './contacts.component.html',
   styleUrl: './contacts.component.css'
 })
-export class ContactsComponent implements OnInit{
+export class ContactsComponent implements OnInit {
 
   //#region Variables
   contacts: Contact[] = [];
@@ -18,13 +18,22 @@ export class ContactsComponent implements OnInit{
     this.contactsService.getAllContacts()
       .subscribe(contacts => this.contacts = contacts);
   }
-
-  ngOnInit(): void {
-    this.getContacts();
-  }
   //#endregion
 
   // DI via ctor:
   constructor(private contactsService: ContactsService) { }
+
+  ngOnInit(): void {
+    this.getContacts();
+  }
+
+  //#region Events
+  onDeleteContact(id: number): void {
+    this.contactsService.deleteContact(id)
+      // Updating only changed items in the list
+      .subscribe(_ => this.contacts = this.contacts.filter(contact => contact.id !== id));
+
+  }
+  //#endregion
 
 }

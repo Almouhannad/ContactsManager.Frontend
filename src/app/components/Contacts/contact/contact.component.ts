@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Contact } from '../../../interfaces/contact/contact';
 
 @Component({
@@ -16,6 +16,16 @@ export class ContactComponent {
   @Input("contact") contact!: Contact;
   //#endregion
 
+  //#region Outputs
+  // Note that event emitter MUST be initialized
+  @Output("deleted") deleted: EventEmitter<number> = new EventEmitter();
+  //#endregion
+
+  //#region Events
+  onDelete(): void {
+    this.deleted.emit(this.contact.id);
+  }
+  //#endregion
 
 
 }

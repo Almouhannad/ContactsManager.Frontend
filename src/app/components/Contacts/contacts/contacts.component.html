@@ -4,7 +4,7 @@
             <div *ngIf="contacts.length !== 0; else:elseBlock" class="row justify-content-center">
                 <h2 class="mb-4 mt-5">Contacts</h2>
                 <div class="col-md-4 mb-4" *ngFor="let contact of contacts">
-                    <app-contact [contact]="contact"></app-contact>
+                    <app-contact [contact]="contact" (deleted)="onDeleteContact($event)"></app-contact>
                 </div>
             </div>
 

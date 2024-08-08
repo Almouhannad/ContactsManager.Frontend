@@ -39,6 +39,8 @@ export class ContactsService {
   //#endregion
 
   //#region Commands
-
+  deleteContact(id: number): Observable<Contact> {
+    return this.http.delete<Contact>(`${this.url}/${id}`, { headers: this.headers });
+  }
   //#endregion
 }
