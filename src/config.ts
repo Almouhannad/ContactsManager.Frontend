@@ -1,0 +1,1 @@
+export var apiUrl: string = "https://localhost:7020/";
