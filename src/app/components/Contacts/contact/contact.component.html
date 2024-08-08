@@ -6,7 +6,7 @@
       <p>ID: {{ contact.id }}</p>
       <p><i class="bi bi-telephone"></i> {{ contact.phone }}</p>
       <p *ngIf="contact.email"><i class="bi bi-envelope"></i> {{ contact.email }}</p>
-      <button class="btn btn-outline-secondary" (click)="isClicked = !isClicked">More</button>
+      <button class="btn btn-outline-dark" (click)="isClicked = !isClicked">More</button>
     </div>
 
     <div class="card-more">
@@ -15,7 +15,7 @@
       <hr>
 
       <div class="buttons">
-        <button class="btn btn-outline-secondary" (click)="isClicked = !isClicked">Back</button>
+        <button class="btn btn-outline-dark" (click)="isClicked = !isClicked">Back</button>
         <button class="btn btn-outline-danger" (click)="onDelete()">Delete</button>
       </div>
 
