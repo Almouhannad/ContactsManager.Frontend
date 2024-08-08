@@ -56,5 +56,9 @@ export class ContactsService {
   updateContact(id: number, contactBody: ContactBody): Observable<Contact> {
     return this.http.put<Contact>(`${this.url}/${id}`, contactBody, { headers: this.headers });
   }
+
+  createContact( contactBody: ContactBody): Observable<Contact> {
+    return this.http.post<Contact>(this.url, contactBody, { headers: this.headers });
+  }
   //#endregion
 }

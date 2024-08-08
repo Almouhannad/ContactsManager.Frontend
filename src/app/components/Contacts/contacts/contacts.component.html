@@ -1,8 +1,9 @@
 <div class="container text-center">
+    <h2 class="mb-4 mt-5">Contacts Manager</h2>
+    <button class="btn btn-outline-success btn-lg mb-4" (click)="open(createContactModal)">+ New Contact</button>
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div *ngIf="contacts.length !== 0; else:elseBlock" class="row justify-content-center">
-                <h2 class="mb-4 mt-5">Contacts</h2>
                 <div class="col-md-4 mb-4" *ngFor="let contact of contacts">
                     <app-contact [contact]="contact" (deleted)="onDeleteContact($event)"></app-contact>
                 </div>
@@ -16,3 +17,17 @@
         </div>
     </div>
 </div>
+
+
+<ng-template #createContactModal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Create contact</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <app-create-contact-form (created)="onCreateContact($event); modal.dismiss('Cross click');"></app-create-contact-form>
+    </div>
+    <!-- <div class="modal-footer">
+    </div> -->
+</ng-template>

@@ -11,6 +11,7 @@ import { ContactsComponent } from './components/Contacts/contacts/contacts.compo
 import { HttpClientModule } from '@angular/common/http';
 import { EditContactFormComponent } from './components/Contacts/edit-contact-form/edit-contact-form.component';
 import { FormsModule } from '@angular/forms';
+import { CreateContactFormComponent } from './components/Contacts/create-contact-form/create-contact-form.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     ContactComponent,
     ContactsComponent,
     EditContactFormComponent,
+    CreateContactFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
   ],
   providers: [
-    ContactsService
+    ContactsService,
+    CreateContactFormComponent
   ],
   bootstrap: [AppComponent]
 })

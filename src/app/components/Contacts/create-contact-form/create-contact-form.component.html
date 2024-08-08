@@ -1,4 +1,4 @@
-<form #editForm="ngForm" (ngSubmit)="onSubmit()" autocomplete="off">
+<form #createForm="ngForm" (ngSubmit)="onSubmit()" autocomplete="off" class="text-center">
 
     <div class="form-group">
         <label for="name"><strong>Name:</strong></label>
@@ -17,9 +17,9 @@
 
     <div class="col-md-12">
         <button style="width: 100%;" type="submit" class="btn btn-outline-primary mb-2"
-            [disabled]="!editForm.dirty">Save</button>
+            [disabled]="!createForm.dirty">Save</button>
         <button style="width: 100%;" type="button" class="btn btn-outline-secondary"
-            (click)="editForm.reset()">Clear</button>
+            (click)="createForm.reset()">Clear</button>
     </div>
 
 </form>
