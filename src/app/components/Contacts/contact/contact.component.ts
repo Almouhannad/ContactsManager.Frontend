@@ -33,7 +33,10 @@ export class ContactComponent {
   onUpdate(contactBody: ContactBody): void {
     this.contactsService.updateContact(this.contact.id, contactBody)
       // Update this component (contact)
-      .subscribe(contact => this.contact = contact);
+      .subscribe(contact => {
+        this.contact = contact
+        this.isClicked = false;
+      });
   }
   //#endregion
 
