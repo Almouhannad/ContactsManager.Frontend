@@ -9,6 +9,8 @@ import { ContactsService } from './services/contacts/contacts.service';
 import { ContactComponent } from './components/Contacts/contact/contact.component';
 import { ContactsComponent } from './components/Contacts/contacts/contacts.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EditContactFormComponent } from './components/Contacts/edit-contact-form/edit-contact-form.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,12 +18,14 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     ContactComponent,
     ContactsComponent,
+    EditContactFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [
     ContactsService

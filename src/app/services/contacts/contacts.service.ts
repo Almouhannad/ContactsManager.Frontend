@@ -4,6 +4,7 @@ import * as config from "../../../config"
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Contact } from '../../classes/Contact/contact';
+import { ContactBody } from '../../classes/Contact/contactBody';
 
 @Injectable({
   providedIn: AppModule
@@ -19,6 +20,15 @@ export class ContactsService {
   getHeaders(): HttpHeaders {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return headers;
+  }
+
+  getContactBody(contact: Contact): ContactBody {
+    let body: ContactBody = new ContactBody();
+    body.name = contact.name;
+    body.email = contact.email;
+    body.phone = contact.phone;
+    body.favorite = contact.favorite;
+    return body;
   }
   //#endregion
 
@@ -41,6 +51,10 @@ export class ContactsService {
   //#region Commands
   deleteContact(id: number): Observable<Contact> {
     return this.http.delete<Contact>(`${this.url}/${id}`, { headers: this.headers });
+  }
+
+  updateContact(id: number, contactBody: ContactBody): Observable<Contact> {
+    return this.http.put<Contact>(`${this.url}/${id}`, contactBody, { headers: this.headers });
   }
   //#endregion
 }
