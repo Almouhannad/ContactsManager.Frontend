@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Contact } from '../../../interfaces/contact/contact';
+import { Contact } from '../../../classes/Contact/contact';
 
 @Component({
   selector: 'app-contact',

@@ -3,7 +3,7 @@ import { AppModule } from '../../app.module';
 import * as config from "../../../config"
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Contact } from '../../interfaces/contact/contact';
+import { Contact } from '../../classes/Contact/contact';
 
 @Injectable({
   providedIn: AppModule

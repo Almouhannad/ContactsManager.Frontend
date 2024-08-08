@@ -1,7 +1,8 @@
-export interface Contact {
-    id: number;
+export class ContactBody {
     name: string;
     email: string | null;
     phone: string;
     favorite: boolean;
+
+    
 }
