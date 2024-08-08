@@ -1,1 +1,1 @@
-export var apiUrl: string = "https://localhost:7020/";
+export var apiUrl: string = "https://localhost:7020/api/";
