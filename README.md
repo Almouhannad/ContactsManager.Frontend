@@ -5,7 +5,7 @@
 ## To run
 ### 1. `git clone <link> <Project-name>`
 ### 2. `cd <Project-name>`
-### 3. `npm install --legacy-peer-deps`
+### 3. `npm install`
 
 
 
