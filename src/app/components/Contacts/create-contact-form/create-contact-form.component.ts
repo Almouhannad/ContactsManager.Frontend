@@ -19,7 +19,13 @@ export class CreateContactFormComponent {
 
   //#region Events
   onSubmit(): void {
-    this.created.emit(this.formModel);
+    if (this.createForm.valid)
+      this.created.emit(this.formModel);
+  }
+
+  onClear(): void {
+    this.createForm.reset();
+    this.formModel = new ContactBody();
   }
   //#endregion
 }

@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { CreateContactFormComponent } from './components/Contacts/create-contact-form/create-contact-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { PhoneValidatorDirective } from './directives/validators/phone-validator.directive';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ToastrModule } from 'ngx-toastr';
     ContactsComponent,
     EditContactFormComponent,
     CreateContactFormComponent,
+    PhoneValidatorDirective,
   ],
   imports: [
     BrowserModule,
