@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { EditContactFormComponent } from './components/Contacts/edit-contact-form/edit-contact-form.component';
 import { FormsModule } from '@angular/forms';
 import { CreateContactFormComponent } from './components/Contacts/create-contact-form/create-contact-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { CreateContactFormComponent } from './components/Contacts/create-contact
     NgbModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
     ContactsService,

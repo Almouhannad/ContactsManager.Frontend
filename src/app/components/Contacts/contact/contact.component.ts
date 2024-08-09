@@ -18,12 +18,13 @@ export class ContactComponent {
   @Input("contact") contact!: Contact;
   //#endregion
 
-  constructor(public contactsService: ContactsService) { }
-
   //#region Outputs
   // Note that event emitter MUST be initialized
   @Output("deleted") deleted: EventEmitter<number> = new EventEmitter();
+  @Output("updated") updated: EventEmitter<any> = new EventEmitter();
   //#endregion
+
+  constructor(public contactsService: ContactsService) { }
 
   //#region Events
   onDelete(): void {
@@ -34,8 +35,9 @@ export class ContactComponent {
     this.contactsService.updateContact(this.contact.id, contactBody)
       // Update this component (contact)
       .subscribe(contact => {
-        this.contact = contact
+        this.contact = contact;
         this.isClicked = false;
+        this.updated.emit();
       });
   }
   //#endregion
