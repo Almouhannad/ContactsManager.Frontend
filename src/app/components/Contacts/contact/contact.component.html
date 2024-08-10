@@ -4,8 +4,9 @@
     <hr>
     <div class="card-main">
       <p>ID: {{ contact.id }}</p>
-      <p><i class="bi bi-telephone"></i> {{ contact.phone }}</p>
-      <p *ngIf="contact.email"><i class="bi bi-envelope"></i> {{ contact.email }}</p>
+      <p><i class="bi bi-telephone" style="margin-right: 0.5em;"></i>{{ contact.phone }}</p>
+      <p *ngIf="contact.email"><i class="bi bi-envelope" style="margin-right: 0.5em;"></i> <a
+          href="mailto:{{contact.email}}">{{ contact.email }}</a></p>
       <button class="btn btn-outline-dark" (click)="isClicked = !isClicked">More</button>
     </div>
 
